@@ -5,6 +5,10 @@ public class Motorcycle extends Vehicle {
 	private int numOfWheels = 2;
 	private String brand;
 	
+	public Motorcycle() {
+		super();
+	}
+
 	public Motorcycle(boolean isMoving, String type, int numOfPassengers, int weightInKg, int numOfWheels,
 			String brand) {
 		super(isMoving, type, numOfPassengers, weightInKg);
@@ -27,5 +31,11 @@ public class Motorcycle extends Vehicle {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+
+	@Override
+	public float calcRepairCost() {
+		return getWeightInKg()*1.2F;
+	}
+	
 	
 }

@@ -3,6 +3,9 @@ package main;
 public class Car extends Vehicle{
 	
 	private String brand;
+	public Car() {
+		super();
+	}
 
 	public Car(boolean isMoving, String type, int numOfPassengers, int weightInKg, String brand) {
 		super(isMoving, type, numOfPassengers, weightInKg);
@@ -16,5 +19,12 @@ public class Car extends Vehicle{
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
+
+	@Override
+	public float calcRepairCost() {
+		return (getWeightInKg()*2F);
+	}
+	
+	
 
 }

@@ -1,12 +1,16 @@
 package main;
 
-public class Vehicle {
+public abstract class Vehicle {
 	
 	private boolean isMoving;
 	private String type;
 	private int numOfPassengers;
 	private int weightInKg;
 	
+	public Vehicle() {
+		super();
+	}
+
 	public Vehicle(boolean isMoving, String type, int numOfPassengers, int weightInKg) {
 		super();
 		this.isMoving = isMoving;
@@ -46,5 +50,13 @@ public class Vehicle {
 	public void setWeightInKg(int weightInKg) {
 		this.weightInKg = weightInKg;
 	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [isMoving=" + isMoving + ", type=" + type + ", numOfPassengers=" + numOfPassengers
+				+ ", weightInKg=" + weightInKg + "]";
+	}
 	
+	public abstract float calcRepairCost();
+
 }
